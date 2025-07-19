@@ -1,8 +1,8 @@
 import "./App.css";
-import useIsGithubTab from "./hooks/useCurrentTab";
+import useGithubTab from "./hooks/useGithubTab";
 
 function App() {
-  const { isLoading, error, isGithub } = useIsGithubTab();
+  const { isLoading, error, isGithub } = useGithubTab();
 
   if (isLoading) {
     return <div>Loading tab information...</div>;

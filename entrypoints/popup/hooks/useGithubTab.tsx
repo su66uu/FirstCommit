@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useIsGithubTab() {
+export default function useGithubTab() {
   const [isGithub, setIsGithub] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
