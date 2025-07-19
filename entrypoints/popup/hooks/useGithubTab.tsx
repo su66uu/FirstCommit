@@ -5,6 +5,8 @@ export default function useGithubTab() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [githubUrl, setGithubUrl] = useState<string | null>(null);
+  const [username, setUsername] = useState<string | null>(null);
+  const [repo, setRepo] = useState<string | null>(null);
 
   useEffect(() => {
     const checkCurrentTab = async () => {
@@ -22,6 +24,9 @@ export default function useGithubTab() {
           if (url.toLowerCase().includes("github.com")) {
             setIsGithub(true);
             setGithubUrl(url);
+            const { username, repo } = parseGithubUrl(url);
+            setUsername(username);
+            setRepo(repo);
           } else {
             setIsGithub(false);
             setGithubUrl(null);
@@ -34,12 +39,30 @@ export default function useGithubTab() {
     };
 
     checkCurrentTab();
-  }, []);
+  }, [parseGithubUrl]);
+
+  function parseGithubUrl(url: string) {
+    const githubUri = url.replace("https://github.com/", "");
+    if (!githubUri) {
+      return {
+        username: "",
+        repo: "",
+      };
+    }
+
+    const splits = githubUri.split("/");
+    return {
+      username: splits[0],
+      repo: splits[1],
+    };
+  }
 
   return {
     isLoading,
     isGithub,
     error,
     githubUrl,
+    username,
+    repo,
   };
 }
