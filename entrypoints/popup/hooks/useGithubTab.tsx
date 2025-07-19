@@ -8,39 +8,6 @@ export default function useGithubTab() {
   const [username, setUsername] = useState<string | null>(null);
   const [repo, setRepo] = useState<string | null>(null);
 
-  useEffect(() => {
-    const checkCurrentTab = async () => {
-      setError(null);
-      try {
-        setIsLoading(true);
-        const tabs = await browser.tabs.query({
-          active: true,
-          currentWindow: true,
-        });
-        setIsLoading(false);
-
-        if (tabs && tabs.length > 0 && tabs[0].url) {
-          const url = tabs[0].url;
-          if (url.toLowerCase().includes("github.com")) {
-            setIsGithub(true);
-            setGithubUrl(url);
-            const { username, repo } = parseGithubUrl(url);
-            setUsername(username);
-            setRepo(repo);
-          } else {
-            setIsGithub(false);
-            setGithubUrl(null);
-          }
-        }
-      } catch (error: any) {
-        console.error("Unable to fetch the current tab details", error.message);
-        setError(error);
-      }
-    };
-
-    checkCurrentTab();
-  }, [parseGithubUrl]);
-
   function parseGithubUrl(url: string) {
     const githubUri = url.replace("https://github.com/", "");
     if (!githubUri) {
@@ -56,6 +23,48 @@ export default function useGithubTab() {
       repo: splits[1],
     };
   }
+
+  useEffect(() => {
+    const checkCurrentTab = async () => {
+      setError(null);
+      try {
+        setIsLoading(true);
+        const tabs = await browser.tabs.query({
+          active: true,
+          currentWindow: true,
+        });
+        setIsLoading(false);
+
+        if (!tabs) {
+          setIsGithub(false);
+          setGithubUrl(null);
+          return;
+        }
+
+        if (
+          tabs &&
+          tabs.length > 0 &&
+          tabs[0].url &&
+          tabs[0].url.toLowerCase().includes("github.com")
+        ) {
+          const url = tabs[0].url;
+          setIsGithub(true);
+          setGithubUrl(url);
+          const { username, repo } = parseGithubUrl(url);
+          setUsername(username);
+          setRepo(repo);
+        } else {
+          setIsGithub(false);
+          setGithubUrl(null);
+        }
+      } catch (error: any) {
+        console.error("Unable to fetch the current tab details", error.message);
+        setError(error);
+      }
+    };
+
+    checkCurrentTab();
+  }, []);
 
   return {
     isLoading,
