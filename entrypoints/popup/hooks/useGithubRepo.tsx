@@ -1,6 +1,6 @@
 interface Props {
-  username: string;
-  repoName: string;
+  username: string | null;
+  repoName: string | null;
 }
 
 interface GithubRepo {
@@ -84,4 +84,7 @@ export default function useGithubRepo(props: Props): UseGithubResponse {
 
     fetchRepo();
   }, [username, repoName]);
+
+
+  return { repo, isLoading, error }
 }
