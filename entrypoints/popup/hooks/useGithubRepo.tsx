@@ -41,7 +41,7 @@ export default function useGithubRepo(props: Props): UseGithubResponse {
 
       try {
         const response = await fetch(
-          `https://api.github.com/repos/${username}/{repoName}`,
+          `https://api.github.com/repos/${username}/${repoName}`,
           {
             method: "GET",
             headers: {
