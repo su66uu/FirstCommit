@@ -85,36 +85,38 @@ function App() {
 
   return (
     <div className="firstcommit">
-      <div className="commit-line">
-        <span className="commit-label">Commit</span>
-        <a href={firstCommit.html_url} target="_blank" className="commit-hash">
-          {firstCommit.sha}
-        </a>
-      </div>
-      <div className="author-line">
-        <span className="author-label">Author: </span>
-        <span className="author-info">
-          {firstCommit.commit.author.name} &lt;{firstCommit.commit.author.email}
-          &gt;
-        </span>
-      </div>
-      <div className="date-line">
-        <span className="date-label">Date: </span>
-        <span className="date-info">
-          {new Date(firstCommit.commit.author.date).toLocaleDateString(
-            "en-US",
-            {
-              weekday: "short",
-              year: "numeric",
-              month: "short",
-              day: "2-digit",
-              hour: "2-digit",
-              minute: "2-digit",
-              second: "2-digit",
-              timeZoneName: "short",
-            },
-          )}
-        </span>
+      <div className="header-block">
+        <div className="commit-line">
+          <span className="commit-label">Commit</span>
+          <a href={firstCommit.html_url} target="_blank" className="commit-hash">
+            {firstCommit.sha}
+          </a>
+        </div>
+        <div className="author-line">
+          <span className="author-label">Author: </span>
+          <span className="author-info">
+            {firstCommit.commit.author.name} &lt;{firstCommit.commit.author.email}
+            &gt;
+          </span>
+        </div>
+        <div className="date-line">
+          <span className="date-label">Date: </span>
+          <span className="date-info">
+            {new Date(firstCommit.commit.author.date).toLocaleDateString(
+              "en-US",
+              {
+                weekday: "short",
+                year: "numeric",
+                month: "short",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                timeZoneName: "short",
+              },
+            )}
+          </span>
+        </div>
       </div>
       <div className="message-container">
         <div className="message-text">{firstCommit.commit.message}</div>

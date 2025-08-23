@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   background: #000000;
@@ -6,18 +7,50 @@ body, html {
   font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 13px;
   line-height: 1.4;
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+  /* text-rendering: optimizeLegibility; */
 }
 
 .firstcommit {
-  padding-bottom: 18px;
-  padding-right: 10px;
-  padding-left: 15px;
+  padding: 8px 10px 10px 15px;
   background: #000000;
   color: #ffffff;
   min-width: 450px;
+  max-width: 520px;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
 }
 
-.error-container, .loading-container {
+.header-block {
+  position: sticky;
+  top: 0;
+  background: #000;
+  padding-bottom: 8px;
+}
+
+.message-container {
+  margin-top: 8px;
+  margin-left: 24px;
+  padding-right: 10px;
+  max-height: 220px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.message-container::-webkit-scrollbar {
+  width: 8px;
+}
+.message-container::-webkit-scrollbar-thumb {
+  background: #444;
+}
+.message-container::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.error-container,
+.loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,36 +78,45 @@ body, html {
 }
 
 .loading-dots {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .loading-dots::after {
-  content: '';
+  content: "";
   animation: dots 1.5s steps(5, end) infinite;
 }
 
 @keyframes dots {
-  0%, 20% { content: ''; }
-  40% { content: '.'; }
-  60% { content: '..'; }
-  80%, 100% { content: '...'; }
+  0%,
+  20% {
+    content: "";
+  }
+  40% {
+    content: ".";
+  }
+  60% {
+    content: "..";
+  }
+  80%,
+  100% {
+    content: "...";
+  }
 }
 
 .commit-line {
   margin-bottom: 4px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 6px;
+  align-items: baseline;
 }
 
 .commit-label {
   color: #ffa500;
 }
-
 .commit-hash {
   color: #ffa500;
   text-decoration: none;
-}
-
-.commit-hash {
-  margin-left: 6px;
 }
 
 .commit-hash:hover {
@@ -84,6 +126,8 @@ body, html {
 .author-line,
 .date-line {
   margin-bottom: 4px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .author-label,
@@ -94,19 +138,24 @@ body, html {
 .author-info,
 .date-info {
   color: #ffffff;
+  margin-left: 6px;
 }
 
 .date-info {
   padding-left: 14px;
+  min-width: 0;
+  margin-left: 8px !important;
 }
 
 .message-container {
   margin-top: 18px;
   margin-left: 24px;
+  padding-right: 10px;
 }
 
 .message-text {
   color: #ffffff;
-  white-space: pre-wrap;
+  white-space: pre-wrap; /* preserve line breaks from git */
+  word-break: break-word; /* wrap long words */
+  overflow-wrap: anywhere;
 }
-
