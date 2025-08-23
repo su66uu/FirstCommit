@@ -11,8 +11,6 @@ When learning from a project, I often read the official README and docs. Sometim
 - Detects if the active tab is a GitHub repository
 - Finds the repo's default branch and fetches the very first commit
 - Displays commit in terminal-like git log style (hash, author, date, message)
-- Robust UI for long, multi-line messages with a scrollable message area
-- Clear loading and git-style errors (rate limits, missing repo, etc.)
 
 ## Screenshots
 
@@ -53,14 +51,12 @@ npm run zip              # Chrome/Edge ZIP
 npm run zip:firefox      # Firefox ZIP + sources ZIP
 ```
 
-WXT will generate files in `.output/`. For Firefox, a sources ZIP is also created which reviewers use to rebuild your extension. Ensure the sources ZIP can be built on its own:
+WXT will generate files in `.output/`. For Firefox, a sources ZIP is also created which reviewers use to rebuild our extension. Ensure the sources ZIP can be built on its own:
 
 ```sh
 npm i
 npm run zip:firefox
 ```
-
-Include these commands in this README (done) so Firefox reviewers know how to build.
 
 ## Permissions
 
