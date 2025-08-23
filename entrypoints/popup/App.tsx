@@ -45,9 +45,6 @@ function App() {
       <div className="error-container">
         <div className="error-text">
           <div className="error-title">{errorMessage}</div>
-          <div className="error-suggestion">
-            Make sure you're on a GitHub repository page with commit history.
-          </div>
         </div>
       </div>
     );

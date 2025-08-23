@@ -57,6 +57,20 @@ export default function useGithubFirstCommit(
     },
   );
 
+  function handleError(err: any) {
+    console.error("Error fetching first commit:", err);
+    switch (err.status) {
+      case 403:
+        setError("API rate limit exceeded. Please try again later.");
+        break;
+      case 404:
+        setError("Repository or branch not found.");
+        break;
+      default:
+        setError(err.message || "An unknown error occurred.");
+    }
+  }
+
   useEffect(() => {
     if (!enabled) {
       return;
@@ -81,7 +95,7 @@ export default function useGithubFirstCommit(
         setFirstCommit(firstCommit);
       } catch (err: any) {
         console.error("Error fetching first commit:", err);
-        setError(err.message);
+        handleError(err);
       } finally {
         setIsLoading(false);
       }
