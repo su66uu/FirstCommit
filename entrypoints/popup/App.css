@@ -8,7 +8,7 @@ body, html {
   line-height: 1.4;
 }
 
-.App {
+.firstcommit {
   padding-top: 6px;
   padding-bottom: 18px;
   padding-right: 6px;
@@ -18,16 +18,55 @@ body, html {
   min-width: 400px;
 }
 
+.error-container, .loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  background: #000000;
+  color: #ffffff;
+  min-width: 400px;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 13px;
+}
+
+.error-title {
+  color: #ff4444;
+  margin-bottom: 8px;
+}
+
+.error-suggestion {
+  color: #cccccc;
+  font-size: 12px;
+}
+
+.loading-dots {
+  color: #888888;
+}
+
+.loading-dots::after {
+  content: '';
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
 .commit-line {
   margin-bottom: 4px;
 }
 
 .commit-label {
-  color: #ffff00;
+  color: #ffa500;
 }
 
 .commit-hash {
-  color: #ffff00;
+  color: #ffa500;
   text-decoration: none;
 }
 

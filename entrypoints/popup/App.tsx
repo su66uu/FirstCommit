@@ -17,25 +17,64 @@ function App() {
   });
 
   if (isLoading || isFirstCommitLoading) {
-    return <div>Loading tab information...</div>;
+    return (
+      <div className="loading-container">
+        <div className="loading-text">
+          <div className="loading-dots">.</div>
+        </div>
+      </div>
+    );
   }
 
   if (error || firstCommitError) {
-    console.error("error", error);
-    console.error("Error fetching the first commit", firstCommitError);
-    return <div>error</div>;
+    let errorMessage = 'Unknown error occurred';
+    if (error) {
+      errorMessage = typeof error === 'string' ? error : (error as any)?.message || String(error);
+    } else if (firstCommitError) {
+      errorMessage = typeof firstCommitError === 'string' ? firstCommitError : (firstCommitError as any)?.message || String(firstCommitError);
+    }
+    
+    console.error("Error:", error || firstCommitError);
+    return (
+      <div className="error-container">
+        <div className="error-text">
+          <div className="error-title">{errorMessage}</div>
+          <div className="error-suggestion">
+            Make sure you're on a GitHub repository page with commit history.
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (!isGithub) {
-    return <div>Not a Github tab</div>;
+    return (
+      <div className="error-container">
+        <div className="error-text">
+          <div className="error-title">fatal: not a git repository</div>
+          <div className="error-suggestion">
+            Navigate to a GitHub repository page to view the first commit.
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (!firstCommit) {
-    return <div>No commits found</div>;
+    return (
+      <div className="error-container">
+        <div className="error-text">
+          <div className="error-title">fatal: no commits found</div>
+          <div className="error-suggestion">
+            This repository appears to have no commit history.
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="App">
+    <div className="firstcommit">
       <div className="commit-line">
         <span className="commit-label">Commit</span>
         <a
