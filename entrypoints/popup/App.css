@@ -1,42 +1,70 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  color: #ffffff;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #54bc4ae0);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App {
+  padding-top: 6px;
+  padding-bottom: 18px;
+  padding-right: 6px;
+  padding-left: 6px;
+  background: #000000;
+  color: #ffffff;
+  min-width: 400px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.commit-line {
+  margin-bottom: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.commit-label {
+  color: #ffff00;
 }
 
-.card {
-  padding: 2em;
+.commit-hash {
+  color: #ffff00;
+  text-decoration: none;
 }
 
-.read-the-docs {
-  color: #888;
+.commit-hash {
+  margin-left: 6px;
 }
+
+.commit-hash:hover {
+  text-decoration: underline;
+}
+
+.author-line,
+.date-line {
+  margin-bottom: 4px;
+}
+
+.author-label,
+.date-label {
+  color: #ffffff;
+}
+
+.author-info,
+.date-info {
+  color: #ffffff;
+}
+
+.date-info {
+  padding-left: 14px;
+}
+
+.message-container {
+  margin-top: 18px;
+  margin-left: 18px;
+}
+
+.message-text {
+  color: #ffffff;
+  white-space: pre-wrap;
+}
+
