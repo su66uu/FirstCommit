@@ -1,6 +1,9 @@
 export default defineContentScript({
-  matches: ['*://*.google.com/*'],
+  matches: [
+    'https://github.com/*',
+    'https://*.github.com/*'
+  ],
   main() {
-    console.log('Hello content.');
+    console.log('FirstCommit content script loaded on GitHub.');
   },
 });

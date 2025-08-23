@@ -2,8 +2,20 @@
   "name": "FirstCommit",
   "description": "Shows Github repo first commit info",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "author": "Subbu",
+  "license": "MIT",
+  "homepage": "https://github.com/su66uu/FirstCommit",
+  "keywords": [
+    "wxt",
+    "webextension",
+    "react",
+    "typescript",
+    "github",
+    "first commit",
+    "FirstCommit"
+  ],
   "scripts": {
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
