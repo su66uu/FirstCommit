@@ -19,6 +19,7 @@ interface GithubRepo {
   description: string;
   html_url: string;
   stargazers_count: number;
+  default_branch: string;
   created_at: string;
 }
 

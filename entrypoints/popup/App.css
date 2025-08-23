@@ -9,13 +9,12 @@ body, html {
 }
 
 .firstcommit {
-  padding-top: 6px;
   padding-bottom: 18px;
-  padding-right: 6px;
-  padding-left: 6px;
+  padding-right: 10px;
+  padding-left: 15px;
   background: #000000;
   color: #ffffff;
-  min-width: 400px;
+  min-width: 450px;
 }
 
 .error-container, .loading-container {
@@ -27,8 +26,12 @@ body, html {
   background: #000000;
   color: #ffffff;
   min-width: 400px;
+  min-height: 150px;
+  width: 400px;
+  height: 150px;
   font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 13px;
+  box-sizing: border-box;
 }
 
 .error-title {
@@ -42,7 +45,7 @@ body, html {
 }
 
 .loading-dots {
-  color: #888888;
+  color: #FFFFFF;
 }
 
 .loading-dots::after {
@@ -99,7 +102,7 @@ body, html {
 
 .message-container {
   margin-top: 18px;
-  margin-left: 18px;
+  margin-left: 24px;
 }
 
 .message-text {
