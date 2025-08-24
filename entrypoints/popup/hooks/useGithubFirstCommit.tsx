@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import useGithubRepo from "./useGithubRepo";
-import { getCommitsNumber, getFirstCommit } from "../github";
+import { getFirstCommit } from "../github";
 
 interface Props {
   repo: string;
   owner: string;
-  branch?: string;
   options?: {
     enabled?: boolean;
   };
@@ -38,7 +37,7 @@ const DEFAULT_BRANCH = "main";
 export default function useGithubFirstCommit(
   props: Props,
 ): UseGithubFirstCommitResponse {
-  const { repo, owner, branch, options } = props;
+  const { repo, owner, options } = props;
   const enabled = options?.enabled ?? true;
   const [isLoading, setIsLoading] = useState(false);
   const [firstCommit, setFirstCommit] = useState<GithubCommit | null>(null);
@@ -56,6 +55,7 @@ export default function useGithubFirstCommit(
       enabled: enabled && !!repo && !!owner,
     },
   );
+  const branch = githubRepo?.default_branch || DEFAULT_BRANCH;
 
   function handleError(err: any) {
     console.error("Error fetching first commit:", err);

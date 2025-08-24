@@ -4,20 +4,19 @@ html {
   padding: 0;
   background: #000000;
   color: #ffffff;
-  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 13px;
   line-height: 1.4;
-  /* -webkit-font-smoothing: antialiased; */
-  /* -moz-osx-font-smoothing: grayscale; */
-  /* text-rendering: optimizeLegibility; */
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .firstcommit {
-  padding: 8px 10px 10px 15px;
+  padding: 0px 10px 10px 10px;
   background: #000000;
   color: #ffffff;
-  min-width: 450px;
-  max-width: 520px;
+  width: 480px;
   box-sizing: border-box;
   overflow-wrap: anywhere;
 }
@@ -30,7 +29,7 @@ html {
 }
 
 .message-container {
-  margin-top: 8px;
+  margin-top: 16px;
   margin-left: 24px;
   padding-right: 10px;
   max-height: 220px;
@@ -74,7 +73,7 @@ html {
 
 .error-suggestion {
   color: #cccccc;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .loading-dots {
@@ -147,15 +146,10 @@ html {
   margin-left: 8px !important;
 }
 
-.message-container {
-  margin-top: 18px;
-  margin-left: 24px;
-  padding-right: 10px;
-}
 
 .message-text {
   color: #ffffff;
-  white-space: pre-wrap; /* preserve line breaks from git */
-  word-break: break-word; /* wrap long words */
+  white-space: pre-wrap;
+  word-break: break-word;
   overflow-wrap: anywhere;
 }

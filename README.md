@@ -1,10 +1,14 @@
 # FirstCommit – Git Blade for GitHub
 
-A tiny WXT + React browser extension that shows the very first commit of the current GitHub repository in a git-log styled popup. Built for fun and curiosity—like git blame, but even less useful. Hence: git blade.
+A tiny WXT + React browser extension that shows the very first commit of
+the current GitHub repository in a git-log styled popup.
+Built for fun and curiosity—like git blame, but even less useful. Hence: git blade.
 
 ## Why
 
-When learning from a project, I often read the official README and docs. Sometimes I also want to know who made the first commit and what that initial commit looked like. This extension answers that in one click.
+When learning from a project, I often read the official README and docs.
+Sometimes I also want to know who made the first commit and what that initial
+commit looked like. This extension answers that in one click.
 
 ## Features
 
@@ -18,6 +22,7 @@ When learning from a project, I often read the official README and docs. Sometim
 ![FirstCommit – long message](./public/screenshots/long-message.png)
 
 ## Getting Started (Development)
+
 Requirements: Node 18+.
 
 Install dependencies and start in Chrome dev mode:
