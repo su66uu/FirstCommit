@@ -90,8 +90,7 @@ export default function useGithubFirstCommit(
 
     const fetchFirstCommit = async () => {
       try {
-        const defaultBranch = githubRepo.default_branch || DEFAULT_BRANCH;
-        const firstCommit = await getFirstCommit(owner, repo, defaultBranch);
+        const firstCommit = await getFirstCommit(owner, repo, branch);
         setFirstCommit(firstCommit);
       } catch (err: any) {
         console.error("Error fetching first commit:", err);

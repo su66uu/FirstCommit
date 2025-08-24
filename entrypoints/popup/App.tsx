@@ -20,7 +20,7 @@ function App() {
     return (
       <div className="loading-container">
         <div className="loading-text">
-          <div className="loading-dots">Fetching</div>
+          <div className="terminal-spinner"></div>
         </div>
       </div>
     );
