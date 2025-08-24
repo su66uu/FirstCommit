@@ -78,7 +78,7 @@ No background networking beyond GitHub’s public API.
 ## Tech Stack
 
 - [WXT](https://wxt.dev/) (MV3 build, zips, and submit tooling)
-- React 19, TypeScript 5
+- React 18, TypeScript 5
 
 ## License
 
