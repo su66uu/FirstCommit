@@ -16,7 +16,7 @@ html {
   padding: 0px 10px 10px 10px;
   background: #000000;
   color: #ffffff;
-  width: 480px;
+  width: 450px;
   box-sizing: border-box;
   overflow-wrap: anywhere;
 }
@@ -59,7 +59,7 @@ html {
   color: #ffffff;
   min-width: 400px;
   min-height: 150px;
-  width: 400px;
+  width: 450px;
   height: 150px;
   font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 13px;
