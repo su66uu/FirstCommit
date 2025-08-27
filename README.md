@@ -9,6 +9,8 @@ Built for fun and curiosity—like git blame, but even less useful. Hence: git b
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Install-blue?logo=google-chrome)](https://chromewebstore.google.com/detail/pmmgmaddffapapaldcfaodimkijdplok?utm_source=item-share-cb)
 [![Firefox Add-ons](https://img.shields.io/badge/Firefox-Install-orange?logo=firefox)](https://addons.mozilla.org/en-US/firefox/addon/firstcommit/)
 
+**Compatible with:** All Chromium-based browsers (Chrome, Brave, Edge, etc.) and Firefox-based browsers (Firefox, Zen, etc.)
+
 ## Why
 
 When learning from a project, I often read the official README and docs.
